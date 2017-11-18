@@ -1,0 +1,47 @@
+Broken Links: 
+
+
+
+External Links: 
+
+attractions.html	http://use.edgefonts.net/exo:i1,i6,n1,n2,n3,n6:default.js
+attractions.html	http://www.officiallondontheatre.co.uk/
+attractions.html	https://www.royal.uk/royal-residences-buckingham-palace
+attractions.html	http://changing-guard.com/queens-life-guard.html
+attractions.html	http://www.parliament.uk/visiting/
+attractions.html	https://www.londoneye.com/
+attractions.html	https://www.stpauls.co.uk/
+attractions.html	http://www.hrp.org.uk/tower-of-london/
+attractions.html	http://www.tate.org.uk/visit/tate-modern
+attractions.html	https://twitter.com
+attractions.html	http://facebook.com
+attractions.html	http://youtube.com
+dining.html	http://use.edgefonts.net/exo:i1,i6,n1,n2,n3,n6:default.js
+dining.html	https://twitter.com
+dining.html	http://facebook.com
+dining.html	http://youtube.com
+events.html	http://use.edgefonts.net/exo:i1,i6,n1,n2,n3,n6:default.js
+events.html	https://twitter.com
+events.html	http://facebook.com
+events.html	http://youtube.com
+index.html	http://use.edgefonts.net/exo:i1,i6,n1,n2,n3,n6:default.js
+index.html	https://twitter.com
+index.html	http://facebook.com
+index.html	http://youtube.com
+info.html	http://use.edgefonts.net/exo:i1,i6,n1,n2,n3,n6:default.js
+info.html	https://twitter.com
+info.html	http://facebook.com
+info.html	http://youtube.com
+rooms.html	http://use.edgefonts.net/exo:i1,i6,n1,n2,n3,n6:default.js
+rooms.html	https://twitter.com
+rooms.html	http://facebook.com
+rooms.html	http://youtube.com
+
+
+Orphaned Files: 
+
+images/alcatraz.jpg
+
+
+Files: 32 Total,  8 HTML,  1 Orphaned
+Files 136 All links,  104 OK,  0 Broken,  32 External
