@@ -1,0 +1,13 @@
+
+.idea
+*.iml
+out
+gen
+.DS_Store
+node_modules
+.tmp
+npm-debug.log
+images
+j-read.txt
+ng-register/builds/angularregistration/index.html
+ng-register/ref
