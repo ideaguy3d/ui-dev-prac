@@ -1,17 +1,20 @@
-myApp.controller('RegistrationController', 
-  ['$scope', 'Authentication', 
-  function($scope, Authentication) {
+myApp.controller('RegistrationController',
+    ['$scope', 'Authentication', '$location',
+        function ($scope, Authentication, $location) {
+            // $scope.message = "";
+            $scope.user = {};
 
-  $scope.login = function() {
-    Authentication.login($scope.user);
-  };
+            $scope.login = function () {
+                Authentication.login($scope.user);
+            };
 
-  $scope.logout = function() {
-    Authentication.logout();
-  };
+            $scope.logout = function () {
+                $location.path('/login');
+                Authentication.logout();
+            };
 
-  $scope.register = function() {
-    Authentication.register($scope.user);
-  }; //register
+            $scope.register = function () {
+                Authentication.register($scope.user);
+            }; // register
 
-}]); //Controller
+        }]); // Controller
