@@ -30,6 +30,13 @@ myApp.config(['$routeProvider', function ($routeProvider) {
                 } // currentAuth
             } // resolve
         })
+        .when('/meetings', {
+            templateUrl: 'views/meetings.html',
+            controller: 'MeetingsController',
+            resolve: {
+
+            }
+        })
         .otherwise({
             redirectTo: '/login'
         });
