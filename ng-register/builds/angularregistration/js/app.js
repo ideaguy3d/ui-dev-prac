@@ -30,12 +30,13 @@ myApp.config(['$routeProvider', function ($routeProvider) {
                 } // currentAuth
             } // resolve
         })
+        .when('/checkins/:userId/:meetingId', {
+            templateUrl: 'views/checkins.html',
+            controller: 'CheckInsController'
+        })
         .when('/meetings', {
             templateUrl: 'views/meetings.html',
-            controller: 'MeetingsController',
-            resolve: {
-
-            }
+            controller: 'MeetingsController'
         })
         .otherwise({
             redirectTo: '/login'

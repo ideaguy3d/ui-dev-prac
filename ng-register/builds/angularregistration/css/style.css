@@ -659,7 +659,8 @@ input.ng-valid.ng-touched {
     padding-bottom: 10px;
 }
 
-.message {
+.message
+{
     color: indianred;
 }
 
