@@ -1,5 +1,11 @@
 <section class="card login">
-	<form name="myform"
+	<div ng-show="currentUser">
+		<h1>Meeting Check in Application Software</h1>
+		<p>Create online meetings and have other people check into those meetings so you can collaborate
+		   and get work done using our bleeding edge technology</p>
+		<img src="images/art1.png" alt="C# Ninja">
+	</div>
+	<form name="myform" ng-hide="currentUser"
 	      ng-submit="login()"
 	      novalidate>
 		
