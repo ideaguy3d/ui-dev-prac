@@ -10,17 +10,21 @@ myApp.controller('CheckInsController', ['$rootScope', '$scope', '$routeParams', 
         $scope.direction = null;
         $scope.query = '';
         $scope.recordId = '';
-        var ref = firebase.database().ref().child('users').child($scope.whichuser)
-            .child('meetings').child($scope.whichmeeting).child('checkins');
+        var ref = firebase.database().ref().child('users').child($scope.whichuser).child('meetings').child($scope.whichmeeting).child('checkins');
         var checkinsList = $firebaseArray(ref);
         $scope.checkins = checkinsList;
 
-        $scope.showLove = function(myCheckin){
-            myCheckin.show = !myCheckin.show; 
+        $scope.showLove = function (myCheckin) {
+            myCheckin.show = !myCheckin.show;
+            if(myCheckin.userState === 'expanded') {
+                myCheckin.userState = '';
+            } else {
+                myCheckin.userState = ' expanded';
+            }
         };
 
         $scope.pickRandom = function () {
-            var whichRecord = Math.round(Math.random() * (checkinsList.length - 1))
+            var whichRecord = Math.round(Math.random() * (checkinsList.length - 1));
             $scope.recordId = checkinsList.$keyAt(whichRecord);
         };
 
@@ -41,6 +45,20 @@ myApp.controller('CheckInsController', ['$rootScope', '$scope', '$routeParams', 
             var refDel = ref.child(id);
             var recordObj = $firebaseObject(refDel);
             recordObj.$remove(id);
-        }
+        };
+
+        $scope.giveLove = function (myCheckin, myGift) {
+            var loveRef = ref.child(myCheckin.$id).child('awards');
+            var checkinsArray = $firebaseArray(loveRef);
+            checkinsArray.$add({
+                name: myGift,
+                date: firebase.database.ServerValue.TIMESTAMP
+            });
+        };
+
+        $scope.deleteLove = function(myCheckin, key){
+            var loveRef = ref.child(myCheckin.$id).child('awards').child(key);
+            $firebaseObject(loveRef).$remove(key);
+        };
     }]
 );
