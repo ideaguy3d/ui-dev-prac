@@ -1,0 +1,10 @@
+<section>
+	<h1>User Info Card Template ^_^</h1>
+	<p>Welcome {{user.name}}</p>
+	<p>{{user.address.street}}</p>
+	<p>{{user.address.city}}, {{user.address.state}}</p>
+	
+	<br>
+	<p>Friends:</p>
+	<p ng-repeat="friend in user.friends">{{friend}}</p>
+</section>

@@ -88,6 +88,14 @@ body  {
     *zoom: 1;
 }
 
+.j-text-center {
+    text-align: center;
+}
+
+.j-padding {
+    padding: 16px;
+}
+
 .card {
     background: white;
     width: 100%;
