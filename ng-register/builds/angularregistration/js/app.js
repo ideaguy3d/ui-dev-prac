@@ -13,6 +13,10 @@ myApp.run(['$rootScope', '$location', function ($rootScope, $location) {
 
 myApp.config(['$routeProvider', function ($routeProvider) {
     $routeProvider
+        .when('/', {
+            templateUrl: 'views/view.home.html',
+            controller: 'RegistrationController'
+        })
         .when('/login', {
             templateUrl: 'views/login.html',
             controller: 'RegistrationController'
@@ -43,6 +47,6 @@ myApp.config(['$routeProvider', function ($routeProvider) {
             controller: 'MeetingsController'
         })
         .otherwise({
-            redirectTo: '/login'
+            redirectTo: '/'
         });
 }]);
