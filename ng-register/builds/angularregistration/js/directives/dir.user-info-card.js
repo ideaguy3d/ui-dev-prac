@@ -6,7 +6,7 @@
     "use strict";
 
     angular.module('myApp')
-        .directive('userInfoCard', [
+        .directive('jaUserInfoCard', [
             function(){
                 return {
                     templateUrl: 'js/directives/temps/temp.user-info-card.html',
