@@ -25,7 +25,7 @@
                         city: "Sacramento",
                         state: "Califoria"
                     },
-                    friends: ["julius", "Ary", "Edward"]
+                    friends: ["Julius", "Ary", "Edward"]
                 };
 
                 $scope.user3 = {

@@ -9,16 +9,24 @@
 		<address></address>
 		
 		<br>
-		
-		<p>
-			Friends:
-			<span ng-repeat="friend in user.friends" class="j-friends"> {{friend}} </span>
-		</p>
+		<ul>
+			<li ng-repeat="friend in user.friends" class="j-friends">
+			<span >
+				{{friend}}
+				<i class="fa fa-times j-point" ng-hide="removing" ng-click="startRemove()"></i>
+			</span>
+				
+				<span ng-show="removing">
+				<button ng-click="removeFriend(friend)">Remove</button>
+				<button ng-click="cancelRemove()">Cancel</button>
+			</span>
+			</li>
+		</ul>
 		
 		<br>
 		
-		<h2 ng-show="!!user.rank">{{user.rank}}</h2>
+		<h2 ng-show="!!user.rank">{{user.rank}} <i class="fa fa-check"></i></h2>
 		<a href="" ng-show="!user.rank" class="btn" ng-click="knightMe(user)">Knight Me</a>
 	</div>
-	
+
 </div>

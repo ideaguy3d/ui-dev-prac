@@ -12,11 +12,24 @@
                     templateUrl: 'js/directives/temps/temp.user-info-card.html',
                     restrict: 'E',
                     scope: {
-                        user: '='
+                        user: '=',
+                        initialCollapsed: '@collapsed'
                     },
                     controller: function ($scope) {
-                        $scope.collapsed = false;
-
+                        $scope.collapsed = ($scope.initialCollapsed === 'true');
+                        $scope.removing = false;
+                        $scope.startRemove = function () {
+                            $scope.removing = true;
+                        };
+                        $scope.cancelRemove = function () {
+                            $scope.removing = false;
+                        };
+                        $scope.removeFriend = function(friend){
+                            var idx = $scope.user.friends.indexOf(friend);
+                            if(idx > -1) {
+                                $scope.user.friends.splice(idx, 1);
+                            }
+                        };
                         $scope.knightMe = function (user) {
                             user.rank = "Knight Mode";
                         };
@@ -36,7 +49,7 @@
             scope: true, // inherited scope
             controller: function ($scope) {
                 $scope.collapsed = false;
-                
+
                 $scope.collapseAddress = function () {
                     $scope.collapsed = true;
                 };
