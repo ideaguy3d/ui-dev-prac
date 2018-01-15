@@ -5,44 +5,64 @@
 (function () {
     "use strict";
 
-    angular.module('myApp')
-        .directive('jaUserInfoCard', [
-            function () {
-                return {
-                    templateUrl: 'js/directives/temps/temp.user-info-card.html',
-                    restrict: 'E',
-                    scope: {
-                        user: '=',
-                        initialCollapsed: '@collapsed'
-                    },
-                    controller: function ($scope) {
-                        $scope.collapsed = ($scope.initialCollapsed === 'true');
-                        $scope.removing = false;
-                        $scope.startRemove = function () {
-                            $scope.removing = true;
-                        };
-                        $scope.cancelRemove = function () {
-                            $scope.removing = false;
-                        };
-                        $scope.removeFriend = function(friend){
-                            var idx = $scope.user.friends.indexOf(friend);
-                            if(idx > -1) {
-                                $scope.user.friends.splice(idx, 1);
-                            }
-                        };
-                        $scope.knightMe = function (user) {
-                            user.rank = "Knight Mode";
-                        };
+    angular.module('myApp').directive('jaUserInfoCard', [
+        function () {
+            return {
+                templateUrl: 'js/directives/temps/temp.user-info-card.html',
+                restrict: 'E',
+                scope: {
+                    user: '=',
+                    initialCollapsed: '@collapsed'
+                },
+                controller: function ($scope) {
+                    $scope.collapsed = ($scope.initialCollapsed === 'true');
 
-                        $scope.collapse = function () {
-                            $scope.collapsed = !$scope.collapsed;
+                    $scope.knightMe = function (user) {
+                        user.rank = "Knight Mode";
+                    };
+
+                    $scope.collapse = function () {
+                        $scope.collapsed = !$scope.collapsed;
+                    };
+
+                    $scope.removeFriend = function (friend) {
+                        console.log("jha - userInfo dir ctrl .removeFriend() invoked!");
+                        var idx = $scope.user.friends.indexOf(friend);
+                        if (idx > -1) {
+                            $scope.user.friends.splice(idx, 1);
                         }
-                    }
+                    };
                 }
             }
-        ]);
+        }
+    ]);
 
-    angular.module('myApp').directive('address', function () {
+    angular.module('myApp').directive('jaRemoveFriend', function () {
+        return {
+            restrict: 'E',
+            templateUrl: 'js/directives/temps/temp.remove-friend-btn.html',
+            scope: {
+                notifyParent: '&removeAFriend'
+            },
+            controller: ['$scope', function ($scope) {
+                $scope.removing = false;
+
+                $scope.startRemove = function () {
+                    $scope.removing = true;
+                };
+
+                $scope.cancelRemove = function () {
+                    $scope.removing = false;
+                };
+
+                $scope.confirmRemoveFriend = function () {
+                    $scope.notifyParent();
+                }
+            }]
+        }
+    });
+
+    angular.module('myApp').directive('jaAddress', function () {
         return {
             restrict: 'E',
             templateUrl: 'js/directives/temps/temp.user-info-card-address.html',

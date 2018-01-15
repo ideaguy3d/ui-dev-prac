@@ -6,20 +6,13 @@
 	<!-- Card Body -->
 	<div ng-hide="!!collapsed">
 		<p>Welcome <strong>{{user.name}}</strong></p>
-		<address></address>
+		<ja-address></ja-address>
 		
 		<br>
+		<p>Friends:</p>
 		<ul>
 			<li ng-repeat="friend in user.friends" class="j-friends">
-			<span >
-				{{friend}}
-				<i class="fa fa-times j-point" ng-hide="removing" ng-click="startRemove()"></i>
-			</span>
-				
-				<span ng-show="removing">
-				<button ng-click="removeFriend(friend)">Remove</button>
-				<button ng-click="cancelRemove()">Cancel</button>
-			</span>
+				{{friend}} &nbsp; <ja-remove-friend remove-a-friend="removeFriend(friend)"></ja-remove-friend>
 			</li>
 		</ul>
 		
