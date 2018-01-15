@@ -28,6 +28,21 @@
                     friends: ["julius", "Ary", "Edward"]
                 };
 
+                $scope.user3 = {
+                    name: 'edward palacio',
+                    friends: ["Julius", "Ary", "Vince"]
+                };
+
+                $scope.user4 = {
+                    name: 'ary ahroosh',
+                    address: {
+                        street: "po box 473",
+                        city: "Sacramento",
+                        state: "Califoria"
+                    },
+                    friends: ["Julius", "Vince", "Edward"]
+                };
+
                 $scope.homeTitle = "built by julius3d.com";
             }
         ])

@@ -201,6 +201,10 @@ input[type=radio] {
     padding: 8px;
 }
 
+strong {
+    font-weight: bold;
+}
+
 .j-friends {
     padding: 4px;
     margin: 4px;
