@@ -37,7 +37,11 @@
         }
     ]);
 
-    angular.module('myApp').directive('jaRemoveFriend', function () {
+    angular.module('myApp').directive('jaRemoveFriendBtn', function () {
+        function jaRemoveFriendBtnCtrl() {
+            
+        }
+
         return {
             restrict: 'E',
             templateUrl: 'js/directives/temps/temp.remove-friend-btn.html',
@@ -56,6 +60,9 @@
                 };
 
                 $scope.confirmRemoveFriend = function () {
+                    // to override parent parameter
+                    // the key is 'friend' because that is the name of the parents param
+                    // $scope.notifyParent({friend: 'ary'});
                     $scope.notifyParent();
                 }
             }]
